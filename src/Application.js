@@ -1,13 +1,25 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
 class Application extends Component {
-    render() {
-        let name = 'Ali';
-        return (
-            <div>
-            <h1> Hello, {name}</h1>
-            <span>This</span>
-            </div>
-        );
-    }
-} export default Application;
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+  handleClick = () => {
+      this.setState({count:this.state.count + 1});
+  };
+  render() {
+    let { count } = this.state;
+    return (
+      <div>
+        <h1> You clicked the button {count} times</h1>
+        <span>
+          <button onClick={() => this.handleClick()}>Click me</button>
+        </span>
+      </div>
+    );
+  }
+}
+export default Application;
