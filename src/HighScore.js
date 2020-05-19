@@ -9,3 +9,4 @@ class HighScore extends Component {
         )
     }
 }
+export default HighScore;
